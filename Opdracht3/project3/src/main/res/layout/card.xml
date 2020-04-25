@@ -23,7 +23,7 @@
             android:contentDescription="TODO" />
 
         <TextView
-            android:id="@+id/line1"
+            android:id="@+id/carBrand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -32,18 +32,19 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:textSize="22sp"
-            tools:text="Line1"
+            tools:text="CarBrand"
 
             />
 
         <TextView
+            android:id="@+id/carModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/line1"
+            android:layout_below="@+id/carBrand"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="4dp"
             android:textSize="17sp"
-            tools:text="Line2"
+            tools:text="CarModel"
             />
     </RelativeLayout>
 
