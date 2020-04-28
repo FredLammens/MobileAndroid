@@ -2,6 +2,7 @@ package android.example.project3;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Adapter;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import androidx.core.util.Pools;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,9 +25,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Controller implements CardAdapter.CardItemClickListener {
     CardAdapter cardAdapter = new CardAdapter(this);
+    ArrayList<PoolCar> poolCars;
+    Context context;
+    public Controller(Context context){
+        this.context = context;
+    }
     static final String BASE_URL = "https://datatank.stad.gent/4/";
 
-    public void InsertPoolCars(final RecyclerView view, Context context) {
+    public void InsertPoolCars(final RecyclerView view) {
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -38,7 +45,7 @@ public class Controller implements CardAdapter.CardItemClickListener {
                 if (!response.isSuccessful()) {
                     Log.e("Post Failed", "error code :" + response.code());
                 } else {
-                    ArrayList<PoolCar> poolCars = (ArrayList<PoolCar>) response.body();
+                    poolCars = (ArrayList<PoolCar>) response.body();
                     view.setHasFixedSize(true);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
                     cardAdapter.setPoolCars(poolCars);
@@ -58,5 +65,8 @@ public class Controller implements CardAdapter.CardItemClickListener {
     @Override
     public void onCardItemClick(int clickedItemIndex) {
         Log.d("testclick","werkt");
+        Intent intent = new Intent(context,CarInfo.class);
+        //intent.putExtra("clickedCar", (Serializable) poolCars.get(clickedItemIndex));
+        context.startActivity(intent);
     }
 }

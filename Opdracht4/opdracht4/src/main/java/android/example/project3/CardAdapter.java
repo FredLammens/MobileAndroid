@@ -17,7 +17,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     public void setPoolCars(ArrayList<PoolCar> poolCars) {
         this.poolCars = poolCars;
     }
-
     ArrayList<PoolCar> poolCars;
     private CardItemClickListener onCardItemListener;
     public CardAdapter(CardItemClickListener listener) {

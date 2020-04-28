@@ -6,6 +6,8 @@ public class PoolCar {
     //region properties
     @SerializedName("vehicleInformation")
     VehicleInformation vehicleInformation;
+    @SerializedName("displayName")
+    String displayName;
     //endregion
     //region constructor
     public PoolCar(VehicleInformation vehicleInformation) {

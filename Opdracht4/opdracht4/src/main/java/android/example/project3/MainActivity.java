@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rcView);
-        Controller c = new Controller();
-        c.InsertPoolCars(recyclerView,this);
+        Controller c = new Controller(this);
+        c.InsertPoolCars(recyclerView);
     }
 }
