@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarInfo">
+
+    <TextView
+        android:id="@+id/displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayObject"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="displayName"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/displayObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="display object" />
+</androidx.appcompat.widget.LinearLayoutCompat>
