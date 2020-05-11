@@ -3,7 +3,6 @@ package android.example.parkingapp.UI;
 import android.example.parkingapp.Controller.Controller;
 import android.example.parkingapp.R;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
