@@ -1,4 +1,4 @@
-package android.example.parkingapp.Repository;
+package android.example.parkingapp.Domein;
 
 import java.util.List;
 
